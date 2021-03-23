@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
-import { Counter } from './Counter';
+import { Counter } from './components/Counter';
+import { Setting } from './components/Setting';
 
 function App() {
   let [value, setValue] = useState<number>(0)
@@ -14,13 +16,12 @@ function App() {
   }
 
   return (
-    <div className="App" >
-      <Counter
-        value={value}
-        addInc={addInc}
-        reset={reset}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="App" >
+        <Route render={() => <Counter value={value} addInc={addInc} reset={reset} />}  path="/counter"/>
+        <Route render={()=><Setting />} path="setting"/>
+      </div>
+    </BrowserRouter>
   );
 }
 
