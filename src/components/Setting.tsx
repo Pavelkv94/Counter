@@ -1,11 +1,11 @@
 import React from 'react';
+import '../App.css';
 
-export function Setting() {
+
+export function Setting(props:any) {
     return (
-        <div className="App" >
-             <div className="countContainer">
-
-             </div>
+        <div className="countContainer" >
+            <button>+++++</button>
         </div>
     )
 }
