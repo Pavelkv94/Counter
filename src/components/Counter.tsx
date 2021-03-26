@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../App.css';
 import { Button } from './Button';
 
@@ -20,11 +21,11 @@ export function Counter(props: CounerType) {
             <div className={`display ${props.value === 5 ? "limit" : ""}`}>
                 {props.value}
             </div>
-            <div className = {"controlContainer"}>
+            <div className={"controlContainer"}>
                 <Button title={"incr"} disabled={disabledOne} onClick={addIncrement} class={`btn ${props.value === 5 ? "disable" : ""}`} />
                 <Button title={"reset"} disabled={disabledTwo} onClick={reset} class={`btn ${props.value === 0 ? "disable" : ""}`} />
-                <Button title={"set"} disabled={disabledTwo} onClick={reset} class={`btn ${props.value === 0 ? "disable" : ""}`} />
+                <NavLink to='/setting'> <Button title={"set"} disabled={true} onClick={reset} class={`btn`} /></NavLink>
             </div>
         </div>
     )
-}
+} //<div className={classes.item} ><NavLink to="/profile" activeClassName={classes.active}> Profile</NavLink></div>

@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <div className="App" >
         <Route render={() => <Counter value={value} addInc={addInc} reset={reset} />} path="/counter" />
-        <Route render={() => <Setting />} path="/setting" />
+        <Route render={() => <Setting  />} path="/setting" />
       </div>
     </BrowserRouter>
   );
