@@ -18,7 +18,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App" >
-        <Route render={() => <Counter value={value} addInc={addInc} reset={reset} />} path="/counter" />
+        <Route render={() => <Counter value={value} addInc={addInc} reset={reset} />} path="/Counter" />
         <Route render={() => <Setting  />} path="/setting" />
       </div>
     </BrowserRouter>

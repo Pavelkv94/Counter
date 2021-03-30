@@ -1,17 +1,20 @@
 body {
   background-color: rgb(0, 0, 0);
 }
+
 .App {
   text-align: center;
   width: 600px;
   margin: 200px auto;
 }
+
 .countContainer {
   width: 600px;
   height: 400px;
   border: rgb(0, 238, 255) 4px solid;
   border-radius: 5px;
 }
+
 .display {
   width: 550px;
   height: 100px;
@@ -26,7 +29,10 @@ body {
   padding-bottom: 40px;
 }
 
+
+
 .btn {
+  cursor: pointer;
   width: 25%;
   height: 50px;
   background-color: rgb(74, 198, 255);
@@ -34,30 +40,39 @@ body {
   outline: none;
   border-radius: 5px;
   margin: 20px;
+}
+
+.btn a {
+  text-decoration: none;
+  font-size: 35px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rgb(0, 0, 0);
-  font-size: 25px;
 }
+
 .btn:hover {
   border: rgb(0, 0, 0) 2px solid;
 }
+
 .btn:active {
-  border: red 2px solid;
+  border: rgb(0, 174, 255) 2px solid;
 }
+
 .limit {
   color: red;
   font-weight: 600;
   font-size: 70px;
 }
+
 .disable {
   opacity: 0.2;
 }
+
 .disable:hover {
   border: rgb(0, 238, 255) 2px solid;
 }
 
 .controlContainer {
   border: rgb(0, 238, 255) 2px solid;
-margin: 0 25px ;
-border-radius: 25px;
+  margin: 0 25px;
+  border-radius: 25px;
 }
