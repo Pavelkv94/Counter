@@ -1,5 +1,8 @@
 body {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(53, 53, 53);
+  background-image: url(./assets/backgr.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App {
@@ -13,6 +16,7 @@ body {
   height: 400px;
   border: rgb(0, 238, 255) 4px solid;
   border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.192);
 }
 
 .display {
@@ -23,13 +27,13 @@ body {
   margin: 20px auto;
   background-color: rgb(117, 255, 255);
   font-size: 60px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: initial;
   color: blue;
   padding-top: 80px;
   padding-bottom: 40px;
+  cursor: default;
 }
-
-
 
 .btn {
   cursor: pointer;
@@ -45,12 +49,12 @@ body {
 .btn a {
   text-decoration: none;
   font-size: 35px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(0, 0, 0);
 }
 
 .btn:hover {
-  border: rgb(0, 0, 0) 2px solid;
+  border: rgb(0, 7, 110) 2px solid;
 }
 
 .btn:active {
@@ -75,4 +79,28 @@ body {
   border: rgb(0, 238, 255) 2px solid;
   margin: 0 25px;
   border-radius: 25px;
+}
+
+.setDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 550px;
+  height: 100px;
+  border: rgb(0, 238, 255) 2px solid;
+  border-radius: 5px;
+  margin: 20px auto;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+.span {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+  height: 60px;
+  border: white 2px solid;
+  color: aquamarine;
 }

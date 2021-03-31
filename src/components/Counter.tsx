@@ -20,7 +20,7 @@ export function Counter(props: CounerType) {
             <div className={`display ${props.value === 5 ? "limit" : ""}`}>
                 {props.value}
             </div>
-            <div className={"controlContainer"}>
+            <div className="controlContainer">
                 <Button title={"incr"} disabled={disabledOne} onClick={addIncrement} class={`btn ${props.value === 5 ? "disable" : ""}`} />
                 <Button title={"reset"} disabled={disabledTwo} onClick={reset} class={`btn ${props.value === 0 ? "disable" : ""}`} />
                 <Button title={"set"} disabled={true} onClick={reset}  class={'btn'}/>
