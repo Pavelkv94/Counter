@@ -1,17 +1,17 @@
 import React from 'react';
 import '../App.css';
 import { Button } from './Button';
+import { SpanSetting } from './SpanSetting';
 
 
 export function Setting(props: any) {
+
+
     return (
         <div className="countContainer" >
             <div className="setDisplay">
-                <span className="span">
-                    <div>Max value:</div>
-                    <input type="number" />
-                </span>
-                <span className="span">Start value:</span>
+                <SpanSetting title={"Max value:"} value={1}/>
+                <SpanSetting title={"Start value:"} value={2}/>
             </div>
             <div className="controlContainer">
                 <Button title={("Count")} disabled={true} onClick={() => { }} class={`btn`} />

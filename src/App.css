@@ -23,9 +23,9 @@ body {
   width: 550px;
   height: 100px;
   border: rgb(0, 238, 255) 2px solid;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 20px auto;
-  background-color: rgb(117, 255, 255);
+  background-color: rgb(143, 255, 255);
   font-size: 60px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style: initial;
@@ -54,7 +54,8 @@ body {
 }
 
 .btn:hover {
-  border: rgb(0, 7, 110) 2px solid;
+  border: rgb(42, 177, 255) 2px solid;
+  box-shadow: 0px 0px 20px rgb(0, 178, 190);
 }
 
 .btn:active {
@@ -82,25 +83,44 @@ body {
 }
 
 .setDisplay {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
   width: 550px;
-  height: 100px;
+  height: 130px;
   border: rgb(0, 238, 255) 2px solid;
   border-radius: 5px;
   margin: 20px auto;
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 40px;
 }
+
 .span {
-  margin: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 20px;
   width: 90%;
   height: 60px;
   border: white 2px solid;
   color: aquamarine;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 40px;
+  cursor: default;
 }
+
+.input {
+  width: 40%;
+  height: 70%;
+  margin: 5px;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 35px;
+  background-color: rgb(206, 249, 255);
+  border-radius: 10px;
+  outline: none;
+}
+
+.input::-webkit-inner-spin-button {
+  opacity: 1;}
