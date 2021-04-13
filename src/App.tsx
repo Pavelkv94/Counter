@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
-import { Counter } from './components/Counter';
+import { Counter } from './components/Counter/Counter';
 import { HeadTitle } from './components/HeadTitle/HeadTitle';
-import { Setting } from './components/Setting';
+import { Setting } from './components/Setting/Setting';
 
 function App() {
   let [value, setValue] = useState<number>(0)

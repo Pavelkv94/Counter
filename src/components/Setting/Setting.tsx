@@ -1,8 +1,7 @@
 import React from 'react';
-import '../App.css';
-import { Button } from './Button';
-import { SpanSetting } from './SpanSetting';
-
+import '../../App.css';
+import { Button } from '../common/Button';
+import { SpanSetting } from '../common/SpanSetting';
 
 export function Setting(props: any) {
 
