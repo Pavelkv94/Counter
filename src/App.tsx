@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import { Counter } from './components/Counter';
+import { HeadTitle } from './components/HeadTitle/HeadTitle';
 import { Setting } from './components/Setting';
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App" >
+        <HeadTitle/>
         <Route render={() => <Counter value={value} addInc={addInc} reset={reset} />} path="/Counter" />
-        <Route render={() => <Setting  />} path="/setting" />
+        <Route render={() => <Setting />} path="/setting" />
       </div>
     </BrowserRouter>
   );

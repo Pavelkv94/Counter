@@ -3,12 +3,13 @@ body {
   background-image: url(./assets/backgr.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
 }
 
 .App {
   text-align: center;
   width: 600px;
-  margin: 200px auto;
+  margin: 0px auto;
 }
 
 .countContainer {
@@ -16,7 +17,7 @@ body {
   height: 400px;
   border: rgb(0, 238, 255) 4px solid;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.192);
+  background-color: rgba(0, 0, 0, 0.699);
 }
 
 .display {
@@ -123,4 +124,6 @@ body {
 }
 
 .input::-webkit-inner-spin-button {
-  opacity: 1;}
+  opacity: 1;
+}
+

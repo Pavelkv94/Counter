@@ -1,0 +1,22 @@
+.headTitle {
+    color: white;
+    
+    position: relative;
+    width: 100%;
+    text-align: center;
+    filter: url(#fire);
+    cursor: default;
+  }
+  .headTitle h2 {
+    font-size: 5em;
+    position: relative;
+    color: rgb(0, 238, 255);
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    -webkit-box-reflect: below -10px linear-gradient(transparent, #0008);
+    text-shadow: 0 0 10px rgb(0, 238, 255),
+                  0 0 40px rgb(0, 238, 255),
+                  0 0 80px rgb(0, 238, 255),
+                  0 0 160px rgb(0, 238, 255),
+                  0 0 240px rgb(0, 238, 255);
+  }
