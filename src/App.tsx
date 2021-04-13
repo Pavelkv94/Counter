@@ -5,23 +5,40 @@ import { Counter } from './components/Counter/Counter';
 import { HeadTitle } from './components/HeadTitle/HeadTitle';
 import { Setting } from './components/Setting/Setting';
 
+export type StateType = {
+  displayValue: number
+  maxValue: number
+  startValue: number
+  isDisabled: boolean
+}
 function App() {
-  let [value, setValue] = useState<number>(0)
-
+  let [state, setState] = useState<StateType>({
+    displayValue: 0,
+    maxValue: 0,
+    startValue: 0,
+    isDisabled: true,
+  })
+  //let [value, setValue] = useState<number>(startValue);
+  //if (maxValue < startValue) { value = NaN }
   function addInc(value: number) {
     let newValue = value + 1;
-    setValue(newValue)
+    setState({ ...state, displayValue: newValue })
   }
   function reset(value: number) {
-    setValue(value)
+    setState({ ...state, displayValue: value })
   }
-
+  function changeValueMax(incValue: number) {
+    setState({ ...state, maxValue: incValue })
+  }
+  function changeValueStart(incValue: number) {
+    setState({ ...state, startValue: incValue })
+  }
   return (
     <BrowserRouter>
       <div className="App" >
-        <HeadTitle/>
-        <Route render={() => <Counter value={value} addInc={addInc} reset={reset} />} path="/Counter" />
-        <Route render={() => <Setting />} path="/setting" />
+        <HeadTitle />
+        <Route render={() => <Counter state={state} addInc={addInc} reset={reset} />} path="/counter" />
+        <Route render={() => <Setting state={state} changeValueMax={changeValueMax} changeValueStart={changeValueStart}/>} path="/setting" />
       </div>
     </BrowserRouter>
   );
