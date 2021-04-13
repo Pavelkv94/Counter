@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import { Counter } from './components/Counter/Counter';
@@ -14,12 +14,41 @@ export type StateType = {
 function App() {
   let [state, setState] = useState<StateType>({
     displayValue: 0,
-    maxValue: 0,
+    maxValue: 5,
     startValue: 0,
     isDisabled: true,
   })
-  //let [value, setValue] = useState<number>(startValue);
-  //if (maxValue < startValue) { value = NaN }
+  useEffect(() => {
+    localStorage.setItem("Display Value", JSON.stringify(state.displayValue))
+  }, [state.displayValue])
+  useEffect(() => {
+    localStorage.setItem("Max Value", JSON.stringify(state.maxValue))
+  }, [state.maxValue])
+  useEffect(() => {
+    localStorage.setItem("Start Value", JSON.stringify(state.startValue))
+  }, [state.startValue])
+
+  useEffect(() => {
+    let localValue = localStorage.getItem("Display Value");
+    if (localValue) {
+      let newValue = JSON.parse(localValue)
+      setState({ ...state, displayValue: newValue })
+    }
+  }, [])
+  useEffect(() => {
+    let localValue = localStorage.getItem("Start Value");
+    if (localValue) {
+      let newValue = JSON.parse(localValue)
+      setState({ ...state, startValue: newValue })
+    }
+  }, [])
+  useEffect(() => {
+    let localValue = localStorage.getItem("Max Value");
+    if (localValue) {
+      let newValue = JSON.parse(localValue)
+      setState({ ...state, maxValue: newValue })
+    }
+  }, [])
   function addInc(value: number) {
     let newValue = value + 1;
     setState({ ...state, displayValue: newValue })
@@ -33,12 +62,13 @@ function App() {
   function changeValueStart(incValue: number) {
     setState({ ...state, startValue: incValue })
   }
+
   return (
     <BrowserRouter>
       <div className="App" >
         <HeadTitle />
         <Route render={() => <Counter state={state} addInc={addInc} reset={reset} />} path="/counter" />
-        <Route render={() => <Setting state={state} changeValueMax={changeValueMax} changeValueStart={changeValueStart}/>} path="/setting" />
+        <Route render={() => <Setting state={state} changeValueMax={changeValueMax} changeValueStart={changeValueStart} />} path="/setting" />
       </div>
     </BrowserRouter>
   );

@@ -1,5 +1,5 @@
 import { start } from 'node:repl';
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../App.css';
 import { Button } from '../common/Button';
 import { StateType } from '../../App'
@@ -16,9 +16,6 @@ export function Counter(props: CounerType) {
     let reset = () => props.reset(props.state.startValue)
     let disabledOne = props.state.displayValue < props.state.maxValue ? false : true
     let disabledTwo = props.state.displayValue === props.state.startValue ? true : false
-    console.log(props.state.displayValue)
-    console.log(props.state.startValue)
-    console.log(disabledTwo)
     return (
         <div className="countContainer">
             <div className={`display ${props.state.displayValue === props.state.maxValue ? "limit" : ""}`}>

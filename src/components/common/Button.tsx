@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { StateType } from '../../App';
 
 type ButtonType = {
     title: string
     disabled: boolean
     onClick: () => void
     class: string
-
 }
 
 export function Button(props: ButtonType) {

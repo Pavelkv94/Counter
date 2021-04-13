@@ -15,10 +15,11 @@ export function Setting(props: SettingType) {
         <div className="countContainer" >
             <div className="setDisplay">
                 <SpanSetting title={"Max value:"} value={props.state.maxValue} changeValue={props.changeValueMax} />
+                {props.state.maxValue<props.state.startValue? <div className="setError">Max value can't be more than Start value.</div>:""}
                 <SpanSetting title={"Start value:"} value={props.state.startValue}  changeValue={props.changeValueStart} />
             </div>
             <div className="controlContainer">
-                <Button title={("Count")} disabled={true} onClick={() => { }} class={`btn`} />
+                <Button title={("Count")} disabled={props.state.isDisabled} onClick={() => { }} class={`btn`}/>
             </div>
         </div>
     )
