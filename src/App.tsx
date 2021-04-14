@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import { Counter } from './components/Counter/Counter';
 import { HeadTitle } from './components/HeadTitle/HeadTitle';
 import { Setting } from './components/Setting/Setting';
+import { AppStateType } from './redux/store';
 
 export type StateType = {
   displayValue: number
@@ -12,6 +14,9 @@ export type StateType = {
   isDisabled: boolean
 }
 function App() {
+const displayValue = useSelector<AppStateType, number>(state=>state.counter.displayValue);
+const dispatch = useDispatch();
+
   let [state, setState] = useState<StateType>({
     displayValue: 0,
     maxValue: 5,
