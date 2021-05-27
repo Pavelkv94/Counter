@@ -1,21 +1,22 @@
 import { start } from 'node:repl';
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../../App.css';
-import { AppRootStateType } from '../../redux/store';
 import { Button } from '../common/Button';
+import { AppStateType } from '../../redux/store';
 
 type CounerType = {
-    state: AppRootStateType
+    state: AppStateType
     addInc: () => void
-    reset: () => void
+    reset: (value: number) => void
 }
 
-export const Counter = React.memo((props: CounerType) => {
+export function Counter(props: CounerType) {
 
-    let addIncrement = () => props.addInc();
-    let reset = () => props.reset();
+    let addIncrement = () => props.addInc()
+    let reset = () => props.reset(props.state.counter.startValue)
     let disabledOne = props.state.counter.displayValue < props.state.counter.maxValue ? false : true
     let disabledTwo = props.state.counter.displayValue === props.state.counter.startValue ? true : false
+    
     return (
         <div className="countContainer">
             <div className={`display ${props.state.counter.displayValue === props.state.counter.maxValue ? "limit" : ""}`}>
@@ -24,8 +25,8 @@ export const Counter = React.memo((props: CounerType) => {
             <div className="controlContainer">
                 <Button title={"incr"} disabled={disabledOne} onClick={addIncrement} class={`btn ${props.state.counter.displayValue === props.state.counter.maxValue ? "disable" : ""}`} />
                 <Button title={"reset"} disabled={disabledTwo} onClick={reset} class={`btn ${props.state.counter.displayValue === props.state.counter.startValue ? "disable" : ""}`} />
-                <Button title={"set"} disabled={true} onClick={() => { }} class={'btn'} />
+                <Button title={"set"} disabled={true} onClick={reset} class={'btn'} />
             </div>
         </div>
     )
-})
+}
