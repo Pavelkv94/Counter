@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { StateType } from '../../App';
 
 type ButtonType = {
     title: string
@@ -16,7 +15,7 @@ export function Button(props: ButtonType) {
             className={props.class}
             onClick={props.onClick}
             disabled={props.disabled}
-        > <NavLink to={props.title === "set" ? "/setting" : "/counter"}>
+        > <NavLink to={props.title === "set" ? "/setting" : "/count"}>
                 <div style={{ width: '25 %', height: '50px' }}>{props.title}</div>
             </NavLink>
 

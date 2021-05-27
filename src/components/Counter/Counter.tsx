@@ -1,31 +1,31 @@
 import { start } from 'node:repl';
 import React, { useEffect } from 'react';
 import '../../App.css';
+import { AppRootStateType } from '../../redux/store';
 import { Button } from '../common/Button';
-import { StateType } from '../../App'
 
 type CounerType = {
-    state: StateType
-    addInc: (value: number) => void
-    reset: (value: number) => void
+    state: AppRootStateType
+    addInc: () => void
+    reset: () => void
 }
 
-export function Counter(props: CounerType) {
+export const Counter = React.memo((props: CounerType) => {
 
-    let addIncrement = () => props.addInc(props.state.displayValue)
-    let reset = () => props.reset(props.state.startValue)
-    let disabledOne = props.state.displayValue < props.state.maxValue ? false : true
-    let disabledTwo = props.state.displayValue === props.state.startValue ? true : false
+    let addIncrement = () => props.addInc();
+    let reset = () => props.reset();
+    let disabledOne = props.state.counter.displayValue < props.state.counter.maxValue ? false : true
+    let disabledTwo = props.state.counter.displayValue === props.state.counter.startValue ? true : false
     return (
         <div className="countContainer">
-            <div className={`display ${props.state.displayValue === props.state.maxValue ? "limit" : ""}`}>
-                {props.state.displayValue}
+            <div className={`display ${props.state.counter.displayValue === props.state.counter.maxValue ? "limit" : ""}`}>
+                {props.state.counter.displayValue}
             </div>
             <div className="controlContainer">
-                <Button title={"incr"} disabled={disabledOne} onClick={addIncrement} class={`btn ${props.state.displayValue === props.state.maxValue ? "disable" : ""}`} />
-                <Button title={"reset"} disabled={disabledTwo} onClick={reset} class={`btn ${props.state.displayValue === props.state.startValue ? "disable" : ""}`} />
-                <Button title={"set"} disabled={true} onClick={reset} class={'btn'} />
+                <Button title={"incr"} disabled={disabledOne} onClick={addIncrement} class={`btn ${props.state.counter.displayValue === props.state.counter.maxValue ? "disable" : ""}`} />
+                <Button title={"reset"} disabled={disabledTwo} onClick={reset} class={`btn ${props.state.counter.displayValue === props.state.counter.startValue ? "disable" : ""}`} />
+                <Button title={"set"} disabled={true} onClick={() => { }} class={'btn'} />
             </div>
         </div>
     )
-}
+})
