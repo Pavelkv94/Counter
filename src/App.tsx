@@ -5,7 +5,7 @@ import './App.css';
 import { Counter } from './components/Counter/Counter';
 import { HeadTitle } from './components/HeadTitle/HeadTitle';
 import { Setting } from './components/Setting/Setting';
-import { incCounterValueAC, resetCounterValueAC } from './redux/counterReducer';
+import { incCounterValueAC, maxValueAC, resetCounterValueAC, startValueAC } from './redux/counterReducer';
 import { AppStateType, store } from './redux/store';
 
 
@@ -19,13 +19,13 @@ function App() {
     dispatch(incCounterValueAC())
   }
   function reset() {
-dispatch(resetCounterValueAC())
+    dispatch(resetCounterValueAC())
   }
   function changeValueMax(incValue: number) {
-
+    dispatch(maxValueAC(incValue))
   }
   function changeValueStart(incValue: number) {
-
+    console.log(incValue)
   }
   return (
     <BrowserRouter>

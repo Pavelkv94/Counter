@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import '../../App.css';
 import { AppStateType } from '../../redux/store';
 import { Button } from '../common/Button';
@@ -11,6 +10,7 @@ type SettingType = {
 }
 
 export function Setting(props: SettingType) {
+    
     return (
         <div className="countContainer" >
             <div className="setDisplay">

@@ -11,8 +11,8 @@ export function SpanSetting(props: SpanSettingType) {
 
 
     const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-        let initValue = JSON.parse(e.currentTarget.value)
-        props.changeValue(initValue)
+      console.log(e.currentTarget.value)
+        props.changeValue(+e.currentTarget.value)
     }
     return (
         <span className="span">
