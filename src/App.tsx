@@ -40,7 +40,7 @@ function App() {
     <BrowserRouter>
       <div className="App" >
         <HeadTitle />
-        <Route render={() => <Counter state={state} addInc={addInc} reset={reset} />} path="/count" />
+        <Route render={() => <Counter state={state} addInc={addInc} reset={reset} />} path="/Counter" />
         <Route render={() => <Setting state={state} changeValueMax={changeValueMax} changeValueStart={changeValueStart} setValue={setValue} />} path="/setting" />
       </div>
     </BrowserRouter>

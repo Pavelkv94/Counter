@@ -1,1 +1,1 @@
-https://github.com/Pavelkv94/Counter.git
+https://pavelkv94.github.io/Counter/
