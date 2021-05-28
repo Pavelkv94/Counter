@@ -9,13 +9,13 @@ type SettingType = {
     changeValueStart: (initValue: number) => void
 }
 
-export function Setting(props: SettingType) {
+export const Setting:React.FC<SettingType> = ({state, changeValueMax, changeValueStart}) => {
     
     return (
         <div className="countContainer" >
             <div className="setDisplay">
-                <SpanSetting title={"Max value:"} value={props.state.counter.maxValue} changeValue={props.changeValueMax} />
-                <SpanSetting title={"Start value:"} value={props.state.counter.startValue} changeValue={props.changeValueStart} />
+                <SpanSetting title={"Max value:"} value={state.counter.maxValue} changeValue={changeValueMax} />
+                <SpanSetting title={"Start value:"} value={state.counter.startValue} changeValue={changeValueStart} />
             </div>
             <div className="controlContainer">
                 <Button title={("Count")} disabled={true} onClick={() => { }} class={`btn`} />

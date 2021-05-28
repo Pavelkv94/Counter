@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
@@ -6,13 +6,12 @@ import { Counter } from './components/Counter/Counter';
 import { HeadTitle } from './components/HeadTitle/HeadTitle';
 import { Setting } from './components/Setting/Setting';
 import { incCounterValueAC, maxValueAC, resetCounterValueAC, startValueAC } from './redux/counterReducer';
-import { AppStateType, store } from './redux/store';
+import { AppStateType } from './redux/store';
 
 
 
 function App() {
-  let state = store.getState();
-  let value = useSelector<AppStateType, number>(state => state.counter.displayValue);
+  let state = useSelector<AppStateType, AppStateType>(state => state);
   let dispatch = useDispatch();
 
   function addInc() {
@@ -21,11 +20,12 @@ function App() {
   function reset() {
     dispatch(resetCounterValueAC())
   }
-  function changeValueMax(incValue: number) {
-    dispatch(maxValueAC(incValue))
+  function changeValueMax(value: number) {
+    dispatch(maxValueAC(value))
   }
-  function changeValueStart(incValue: number) {
-    console.log(incValue)
+  function changeValueStart(value: number) {
+    console.log(value)
+    dispatch(startValueAC(value))
   }
   return (
     <BrowserRouter>

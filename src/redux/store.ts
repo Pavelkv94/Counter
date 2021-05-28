@@ -1,20 +1,15 @@
 import { combineReducers, createStore } from "redux";
+import { loadState, saveState } from "../utils/localstorage";
 import { counterReducer } from "./counterReducer";
 
 const rootReducer = combineReducers({ counter: counterReducer })
 
-export type AppStateType = ReturnType<typeof rootReducer>
-
-let preloadedState;
-const persistedTodoString = localStorage.getItem('state');
-if (persistedTodoString) {
-    preloadedState = JSON.parse(persistedTodoString)
-}
-
-
-
-export const store = createStore(rootReducer, preloadedState)
+export const store = createStore(rootReducer, loadState())
 
 store.subscribe(() => {
-    localStorage.setItem('state', JSON.stringify(store.getState()))
-})
+    saveState({
+        counter: store.getState().counter
+    });
+});
+
+export type AppStateType = ReturnType<typeof rootReducer>
