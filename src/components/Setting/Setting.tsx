@@ -9,8 +9,8 @@ type SettingType = {
     changeValueStart: (initValue: number) => void
 }
 
-export const Setting:React.FC<SettingType> = ({state, changeValueMax, changeValueStart}) => {
-    
+export const Setting: React.FC<SettingType> = ({ state, changeValueMax, changeValueStart }) => {
+
     return (
         <div className="countContainer" >
             <div className="setDisplay">
