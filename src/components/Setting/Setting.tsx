@@ -20,12 +20,14 @@ export const Setting: React.FC<SettingType> = ({ state, changeValueMax, changeVa
                 {state.counter.maxValue <= state.counter.startValue ? <div className="setError">Max value can't be more than Start value.</div> : ""}
                 <SpanSetting title={"Start value:"} value={state.counter.startValue} changeValue={changeValueStart} />
             </div>
-            <div className="controlContainer">
-                <Button title={"Count"}
-                    disabled={disabledBtn}
-                    onClick={setDisplayValue}
-                    class={`btn ${state.counter.maxValue <= state.counter.startValue ? "disable" : ""}`}
-                />
+            <div style={state.counter.maxValue <= state.counter.startValue ? { position: "relative", zIndex: -1 } : {}}>
+                <div className="controlContainer">
+                    <Button title={"Count"}
+                        disabled={disabledBtn}
+                        onClick={setDisplayValue}
+                        class={`btn ${state.counter.maxValue <= state.counter.startValue ? "disable" : ""}`}
+                    />
+                </div>
             </div>
         </div>
     )
