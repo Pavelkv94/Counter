@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent } from 'react';
 import '../../App.css';
 
 type SpanSettingType = {
@@ -6,12 +6,10 @@ type SpanSettingType = {
     value: number
     changeValue: (initValue: number) => void
 }
-
+//общий инпут
 export function SpanSetting(props: SpanSettingType) {
-
-
+    //достаем значение из инпута
     const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(e.currentTarget.value)
         props.changeValue(+e.currentTarget.value)
     }
     return (

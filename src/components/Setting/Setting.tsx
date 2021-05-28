@@ -9,9 +9,11 @@ type SettingType = {
     changeValueStart: (initValue: number) => void
     setValue: () => void
 }
-
+//панель настроек
 export const Setting: React.FC<SettingType> = ({ state, changeValueMax, changeValueStart, setValue }) => {
+    //условия дизейбла кнопки
     let disabledBtn = state.counter.maxValue <= state.counter.startValue ? true : false;
+    //коллбэк
     const setDisplayValue = () => setValue();
     return (
         <div className="countContainer" >
