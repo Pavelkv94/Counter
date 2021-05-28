@@ -7,13 +7,13 @@ import { AppStateType } from '../../redux/store';
 type CounerType = {
     state: AppStateType
     addInc: () => void
-    reset: (value: number) => void
+    reset: () => void
 }
 
 export function Counter(props: CounerType) {
 
     let addIncrement = () => props.addInc()
-    let reset = () => props.reset(props.state.counter.startValue)
+    let reset = () => props.reset()
     let disabledOne = props.state.counter.displayValue < props.state.counter.maxValue ? false : true
     let disabledTwo = props.state.counter.displayValue === props.state.counter.startValue ? true : false
     
