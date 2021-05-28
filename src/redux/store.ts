@@ -11,8 +11,6 @@ if (persistedTodoString) {
     preloadedState = JSON.parse(persistedTodoString)
 }
 
-
-
 export const store = createStore(rootReducer, preloadedState)
 
 store.subscribe(() => {

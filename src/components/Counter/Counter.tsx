@@ -25,7 +25,7 @@ export function Counter(props: CounerType) {
             <div className="controlContainer">
                 <Button title={"incr"} disabled={disabledOne} onClick={addIncrement} class={`btn ${props.state.counter.displayValue === props.state.counter.maxValue ? "disable" : ""}`} />
                 <Button title={"reset"} disabled={disabledTwo} onClick={reset} class={`btn ${props.state.counter.displayValue === props.state.counter.startValue ? "disable" : ""}`} />
-                <Button title={"set"} disabled={true} onClick={reset} class={'btn'} />
+                <Button title={"set"} disabled={false} onClick={reset} class={'btn'} />
             </div>
         </div>
     )

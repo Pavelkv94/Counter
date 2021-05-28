@@ -71,10 +71,12 @@ body {
 
 .disable {
   opacity: 0.2;
+  
 }
 
 .disable:hover {
   border: rgb(0, 238, 255) 2px solid;
+  cursor: default;
 }
 
 .controlContainer {
@@ -104,7 +106,6 @@ body {
   margin: 20px;
   width: 90%;
   height: 60px;
-  border: white 2px solid;
   color: aquamarine;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 40px;
@@ -127,3 +128,26 @@ body {
   opacity: 1;
 }
 
+svg {
+  height: 100px;
+}
+
+.setError {
+  color: red;
+  text-decoration: underline;
+  font-size: 1.2em;
+  cursor: default;
+  animation: blink 0.6s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

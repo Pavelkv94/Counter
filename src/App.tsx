@@ -5,7 +5,7 @@ import './App.css';
 import { Counter } from './components/Counter/Counter';
 import { HeadTitle } from './components/HeadTitle/HeadTitle';
 import { Setting } from './components/Setting/Setting';
-import { incCounterValueAC, maxValueAC, resetCounterValueAC, startValueAC } from './redux/counterReducer';
+import { incCounterValueAC, maxValueAC, resetCounterValueAC, setValueAC, startValueAC } from './redux/counterReducer';
 import { AppStateType } from './redux/store';
 
 
@@ -27,12 +27,15 @@ function App() {
     console.log(value)
     dispatch(startValueAC(value))
   }
+  function setValue() {
+    dispatch(setValueAC())
+  }
   return (
     <BrowserRouter>
       <div className="App" >
         <HeadTitle />
-        <Route render={() => <Counter state={state} addInc={addInc} reset={reset} />} path="/counter" />
-        <Route render={() => <Setting state={state} changeValueMax={changeValueMax} changeValueStart={changeValueStart} />} path="/setting" />
+        <Route render={() => <Counter state={state} addInc={addInc} reset={reset} />} path="/count" />
+        <Route render={() => <Setting state={state} changeValueMax={changeValueMax} changeValueStart={changeValueStart} setValue={setValue}/>} path="/setting" />
       </div>
     </BrowserRouter>
   );
