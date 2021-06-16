@@ -17,7 +17,7 @@ const initialState = {
     startValue: 0,
     isDisabled: true,
 }
-type InitialStateType = typeof initialState
+export type InitialStateType = typeof initialState
 export function counterReducer(state: InitialStateType = initialState, action: ActionType): InitialStateType {
     console.log(action)
     switch (action.type) {
